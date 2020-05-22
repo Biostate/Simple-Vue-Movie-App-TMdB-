@@ -1,5 +1,8 @@
 # helloworld
 
+## Configure .env file
+Change .env-example file name to .env and add you API KEY and Firebase configurations.
+
 ## Project setup
 ```
 npm install
