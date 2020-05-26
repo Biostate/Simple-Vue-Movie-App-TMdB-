@@ -3,7 +3,7 @@
         <div :class="sliderClass">
             <div v-for="image in filterMovies" :key="image.id">
                 <div class="slider-item" v-if="image.poster_path">
-                    <router-link :to="'movie/'+image.id">
+                    <router-link :to="'/movie/'+image.id">
                         <img :src="'https://image.tmdb.org/t/p/w500'+image.poster_path" class="img-fluid tns-lazy-img" :data-src="'https://image.tmdb.org/t/p/w500'+image.poster_path" />
                         <div class="movie-info pt-3 px-2 pb-2">
                             <div class="text-white slider-title">

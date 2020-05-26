@@ -2,18 +2,23 @@
     <div class="row mt-3 py-2 bg-dark text-white rounded" v-if="images">
         <div class="col-md-12">
             <h3>Images</h3>
-            <div class="imageSlider">
-                <div v-for="image in images" :key="image.id">
-                    <div class="slider-item">
-                        <a :href="'http://image.tmdb.org/t/p/w780'+image.file_path" class="glightbox">
-                            <img :src="'http://image.tmdb.org/t/p/w185'+image.file_path" class="img-fluid  tns-lazy-img" :data-src="'https://image.tmdb.org/t/p/w185'+image.file_path" />
-                        </a>
+            <div class="slider" v-if="images.length > 0">
+                <div class="imageSlider">
+                    <div v-for="image in images" :key="image.id">
+                        <div class="slider-item">
+                            <a :href="'http://image.tmdb.org/t/p/w780'+image.file_path" class="glightbox">
+                                <img :src="'http://image.tmdb.org/t/p/w185'+image.file_path" class="img-fluid  tns-lazy-img" :data-src="'https://image.tmdb.org/t/p/w185'+image.file_path" />
+                            </a>
+                        </div>
                     </div>
                 </div>
+                <div class="imageSliderControll mt-1 float-right">
+                    <button class="btn btn-primary">PREV</button>
+                    <button class="btn btn-primary ml-2">NEXT</button>
+                </div>
             </div>
-            <div class="imageSliderControll mt-1 float-right">
-                <button class="btn btn-primary">PREV</button>
-                <button class="btn btn-primary ml-2">NEXT</button>
+            <div class="error" v-else>
+                There are no images about this movie.
             </div>
         </div>
     </div>
